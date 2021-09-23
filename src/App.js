@@ -10,6 +10,7 @@ import {
   faTimes,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
+
 export default function App() {
   console.log(data);
 
@@ -74,8 +75,7 @@ export default function App() {
               type="text"
               name="name"
               placeholder="Enter your first name"
-              width="100%"
-              style={{ borderRadius: 6 }}
+              style={{ borderRadius: 6, width: "194vh" }}
             />
           </label>
           <br />
@@ -85,14 +85,14 @@ export default function App() {
               type="text"
               name="name"
               placeholder="Enter your last name"
-              style={{ borderRadius: 6 }}
+              style={{ borderRadius: 6, width: "194vh" }}
             />
           </label>
           <br />
           <label>
             <div style={{ fontWeight: "bold", margin: "auto" }}>Profiles</div>
 
-            <select style={{ borderRadius: 6 }}>
+            <select style={{ borderRadius: 6, width: "194vh" }}>
               <option value="Na">Select...</option>
             </select>
           </label>
@@ -103,7 +103,7 @@ export default function App() {
               type="text"
               name="name"
               placeholder="Enter your username"
-              style={{ borderRadius: 6 }}
+              style={{ borderRadius: 6, width: "194vh" }}
             />
           </label>
           <br />
@@ -115,7 +115,7 @@ export default function App() {
               type="text"
               name="name"
               placeholder="Enter your email id"
-              style={{ borderRadius: 6 }}
+              style={{ borderRadius: 6, width: "194vh" }}
             />
           </label>
           <br />
@@ -125,7 +125,7 @@ export default function App() {
               type="text"
               name="name"
               placeholder="Enter your Password"
-              style={{ borderRadius: 6 }}
+              style={{ borderRadius: 6, width: "194vh" }}
             />
           </label>
         </form>
