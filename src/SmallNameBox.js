@@ -9,7 +9,7 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function SmallNameBox({ data }) {
+export default function SmallNameBox({ data, deleteUser, id, editUser }) {
   function getRandomColor() {
     var letters = "0123456789ABCDEF";
     var color = "#";
@@ -18,7 +18,14 @@ export default function SmallNameBox({ data }) {
     }
     return color;
   }
-
+  const deleteUserClick = () => {
+    deleteUser(id);
+  };
+  const editUserClick = () => {
+    var Firstname = prompt("New Firstname : ");
+    var Lastname = prompt("New Lastname : ");
+    editUser(id, Firstname + " " + Lastname);
+  };
   return (
     <div class="col-3">
       <div
@@ -29,7 +36,6 @@ export default function SmallNameBox({ data }) {
           textAlign: "center",
           padding: `40px 0 50px`,
           height: 120,
-          //   boxShadow: `5px 5px 5px 5px gray`,
         }}
       >
         <div
@@ -40,7 +46,7 @@ export default function SmallNameBox({ data }) {
             right: 25,
           }}
         >
-          <FontAwesomeIcon icon={faTrash} />
+          <FontAwesomeIcon icon={faTrash} onClick={deleteUserClick} />
         </div>
         <div
           style={{
@@ -50,13 +56,12 @@ export default function SmallNameBox({ data }) {
             right: 50,
           }}
         >
-          <FontAwesomeIcon icon={faPencilAlt} />
+          <FontAwesomeIcon icon={faPencilAlt} onClick={editUserClick} />
         </div>
 
         <div
           style={{
             fontWeight: "bold",
-            // alignContent: "center",
             justifyContent: "center",
           }}
           class="row"
@@ -68,12 +73,6 @@ export default function SmallNameBox({ data }) {
               width: 50,
               height: 50,
               fontSize: 30,
-              // textAlign: "center",
-              overflow: "hidden",
-              // justifyContent: "center",
-              // alignItems: "center",
-              // padding: "auto",
-              // margin: "auto",
             }}
             class="col-6"
           >
@@ -81,26 +80,20 @@ export default function SmallNameBox({ data }) {
               style={{
                 margin: "auto",
                 alignSelf: "center",
-                // backgroundColor: "blue",
               }}
             >
               {data.name[0].toUpperCase()}
             </div>
           </div>
-          {/* <FontAwesomeIcon icon={faTimes} /> */}
           <div
             class="col-6"
             style={{
-              // backgroundColor: "blue",
               paddingLeft: 15,
               marginLeft: 0,
               marginTop: 10,
               textAlign: "start",
               justifyContent: "center",
               alignItems: "center",
-              // backgroundColor: "blue",
-              // paddingVertical: "auto",
-              // margin: "auto",
             }}
           >
             {data.name.toUpperCase()}
